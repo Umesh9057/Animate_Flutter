@@ -19,8 +19,28 @@ class _HomePageViewState extends State<HomePageView> {
         centerTitle: true,
       ),
 
-      body: Text('Hello'),
+      body:  Container(
+        child: Center(
+          child: InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DetailPage()),
+              );
+            },
+            child: Hero(
+              tag: 'Background',
+              child: Image.asset(
+                'assets/images/naruto.jpg',
+                width: 150,
+                height: 100,
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
+
 
